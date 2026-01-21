@@ -16,6 +16,7 @@ index_name = "youtubechatbot"
 
 def createKnowledgeBase(videoId):
     isSuccess = True
+    error_msg = ""
     try:
         #Substeps1 : Document Ingestion - This time we are using Youtube API but could have also used Langchain document loaders 
         youTubeObject = YouTubeTranscriptApi()
@@ -43,9 +44,10 @@ def createKnowledgeBase(videoId):
         #------This finishes the third and fourth substeps of Embedding Generation and storage in vector store
     except Exception as e:
         isSuccess = False
+        error_msg = str(e)
         print(f"An error occurred: {e}.No captions available for this video.")
     finally:
-        return isSuccess
+        return isSuccess, error_msg
 
 
 if __name__ == "__main__":

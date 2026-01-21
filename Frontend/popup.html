@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Video Q&A</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <input type="text" id="question" placeholder="Ask your question..." autocomplete="off" />
+  <!-- <button id="askBtn">Ask AI</button> -->
+  <button id="askBtn" disabled>Ask Question</button>
+  <p id="statusMsg">Getting the transcript ready...</p>
+
+  <div id="loader">
+    <div class="spinner"></div>
+    <div id="loader-text">Fetching answer to your question...</div>
+    <div id="quote"></div>
+  </div>
+
+  <div id="answerBox">
+    <div id="answerText"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

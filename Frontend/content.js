@@ -1,0 +1,1 @@
+// Content script - injection handled by background script

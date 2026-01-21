@@ -6,7 +6,7 @@ def retrieveDocuments(vectorStore, question):
         #Convert question to embedding and retrieve top 4 similar documents from vector store
         embeddings = GoogleGenerativeAIEmbeddings(model="text-embedding-004")
         vector = embeddings.embed_query(question)
-        docs = vectorStore.similarity_search_by_vector(vector, k=4)
+        docs = vectorStore.similarity_search_by_vector(vector, k=10)
         print(f"Number of Documents fetched are {len(docs)}")
     except Exception as e:
         print(f"An error occurred: {e} while retrieving documents.")  
